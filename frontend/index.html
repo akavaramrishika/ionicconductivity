@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALIGNN Conductivity Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body data-theme="light">
+  <main class="app-shell">
+    <section class="card hero-card">
+      <div class="hero-top">
+        <div>
+          <p class="eyebrow">ALIGNN Conductivity Predictor</p>
+          <h1>Upload your CIF file and predict ionic conductivity.</h1>
+        </div>
+      </div>
+      <p class="hero-copy">
+        Drag and drop your CIF file here or choose it manually. Once uploaded, click predict conductivity.
+      </p>
+    </section>
+
+    <section class="card upload-card">
+      <form id="upload-form">
+        <label id="dropzone" class="dropzone" for="structure-file">
+          <input id="structure-file" name="file" type="file" accept=".cif,.txt" required>
+          <span class="drop-title">Drag and drop CIF file</span>
+          <span class="drop-subtitle">or click here to choose file</span>
+        </label>
+        <p id="upload-status" class="status-text">No file uploaded yet.</p>
+        <button type="submit" class="primary-button">Upload File</button>
+      </form>
+      <pre id="upload-preview" class="preview">Waiting for file upload.</pre>
+    </section>
+
+    <section class="card action-card">
+      <button id="predict-button" class="primary-button" type="button" disabled>Predict Conductivity</button>
+      <div id="prediction-card" class="prediction-card empty">
+        <p class="prediction-value">No prediction yet</p>
+        <p class="prediction-meta">Upload a CIF file first.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/app.js?v=2"></script>
+</body>
+</html>
